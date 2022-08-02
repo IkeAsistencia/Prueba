@@ -1,5 +1,4 @@
-FROM amazoncorretto:11
-
-ARG JAR_FILE=build/libs/*SNAPSHOT.jar
-COPY ${JAR_FILE} /app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+FROM openjdk:8
+ADD target/DockerDemo.jar DockerDemo.jar
+EXPOSE 8080
+ENTRYPOINT ["java","-jar","DockerDemo.jar"]

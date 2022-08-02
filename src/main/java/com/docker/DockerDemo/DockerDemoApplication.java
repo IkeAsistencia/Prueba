@@ -1,13 +1,13 @@
-package boris.maths;
+package com.docker.DockerDemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MathsApplication {
+public class DockerDemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MathsApplication.class, args);
+		SpringApplication.run(DockerDemoApplication.class, args);
 	}
 
 }
