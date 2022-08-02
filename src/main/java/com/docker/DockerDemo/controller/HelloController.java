@@ -17,9 +17,4 @@ public class HelloController {
 		dto.setMessage(message);
 		return dto;
 	}
-
-	@GetMapping("/test")
-    public String test() {
-        return "HEALTH CHECK SUCCEEDED !!";
-    }
 }
