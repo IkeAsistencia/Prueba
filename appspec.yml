@@ -3,7 +3,6 @@ Resources:
   - TargetService:
       Type: AWS::ECS::Service
       Properties:
-        #TaskDefinition: "arn:aws:ecs:ap-southeast-1:99999999999999:task-definition/NewMathServiceTask:2"
         TaskDefinition: "arn:aws:ecs:us-east-1:186005301796:task-definition/NewMathServiceTask:1"
         LoadBalancerInfo:
           ContainerName: "mathservice"
