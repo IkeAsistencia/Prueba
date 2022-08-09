@@ -12,7 +12,7 @@ EXPOSE $APP_PORT $APP_PORT
 EXPOSE 8091 8091
 EXPOSE 80 8091
 EXPOSE 443 8091
-ADD target/$PROJECT_NAME-$VERSION.jar target/$PROJECT_NAME/$PROJECT_NAME-$VERSION.jar
+ADD target/$PROJECT_NAME-$VERSION.jar $PROJECT_NAME-$VERSION.jar
 
 ADD ./vmwnasistappqa.pfx /$PROJECT_NAME-$VERSION.jar/vmwnasistappqa.pfx
 ADD ./bbmx.cer /$PROJECT_NAME-$VERSION.jar/bbmx.cer
@@ -28,6 +28,4 @@ RUN echo "$COMPILE"
 
 RUN echo "java $COMPILE-jar $PROJECT_NAME-$VERSION.jar"
 
-ENTRYPOINT ["sh", "-c", "java -Xminf0.1 -Xmaxf0.3 -Xms128M -Xmx512M $COMPILE-jar $PROJECT_NAME-$VERSION.jar" ]
-
-
+ENTRYPOINT ["sh", "-c", "java -Xminf0.1 -Xmaxf0.3 -Xms128M -Xmx512M $COMPILE-jar", "$PROJECT_NAME-$VERSION.jar" ]
