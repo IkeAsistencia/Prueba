@@ -28,4 +28,4 @@ RUN echo "$COMPILE"
 
 RUN echo "java $COMPILE-jar $PROJECT_NAME-$VERSION.jar"
 
-ENTRYPOINT ["java","-jar","$PROJECT_NAME-$VERSION.jar"]
+ENTRYPOINT ["java","-jar","/$PROJECT_NAME-$VERSION.jar"]
