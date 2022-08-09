@@ -18,7 +18,7 @@ ADD ./vmwnasistappqa.pfx /$PROJECT_NAME-$VERSION.jar/vmwnasistappqa.pfx
 ADD ./bbmx.cer /$PROJECT_NAME-$VERSION.jar/bbmx.cer
 ADD ./certificate.pem /$PROJECT_NAME-$VERSION.jar/certificate.pem
 
-RUN yum update && yum install -y vim && rm -rf /var/lib/apt/lists/*
+RUN yum update -y && yum install -y vim && rm -rf /var/lib/apt/lists/*
 
 RUN keytool -import -alias bbmx -keystore $JAVA_11_HOME/lib/security/cacerts -file bbmx.cer -storepass changeit -noprompt
 
