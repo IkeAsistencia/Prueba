@@ -3,7 +3,7 @@ Resources:
   - TargetService:
       Type: AWS::ECS::Service
       Properties:
-        TaskDefinition: "arn:aws:ecs:us-east-1:186005301796:task-definition/NewMathServiceTask:1"
+        TaskDefinition: ""arn:aws:ecs:us-east-1:186005301796:task-definition/DemoQA:1""
         LoadBalancerInfo:
-          ContainerName: "mathservice"
-          ContainerPort: 8080
+          ContainerName: "demoqa"
+          ContainerPort: 8091
