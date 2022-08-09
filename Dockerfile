@@ -1,4 +1,4 @@
-FROM openjdk:corretto11
+FROM amazoncorretto:11
 
 ENV PROJECT_NAME=BanBajio
 ENV VERSION=2.5.8
