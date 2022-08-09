@@ -1,4 +1,4 @@
-FROM openjdk:11
+FROM openjdk:corretto11
 
 ENV PROJECT_NAME=BanBajio
 ENV VERSION=2.5.8
@@ -20,9 +20,9 @@ ADD ./certificate.pem /$PROJECT_NAME-$VERSION.jar/certificate.pem
 
 RUN apt-get update && apt-get install -y vim && rm -rf /var/lib/apt/lists/*
 
-RUN keytool -import -alias bbmx -keystore $JAVA_HOME/lib/security/cacerts -file bbmx.cer -storepass changeit -noprompt
+RUN keytool -import -alias bbmx -keystore $JAVA_11_HOME/lib/security/cacerts -file bbmx.cer -storepass changeit -noprompt
 
-RUN keytool -import -alias certificate -keystore $JAVA_HOME/lib/security/cacerts -file certificate.pem -storepass changeit -noprompt
+RUN keytool -import -alias certificate -keystore $JAVA_11_HOME/lib/security/cacerts -file certificate.pem -storepass changeit -noprompt
 
 RUN echo "$COMPILE"
 
