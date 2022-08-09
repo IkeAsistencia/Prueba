@@ -20,9 +20,9 @@ ADD ./certificate.pem /$PROJECT_NAME-$VERSION.jar/certificate.pem
 
 RUN yum update -y && yum install -y vim && rm -rf /var/lib/apt/lists/*
 
-RUN keytool -import -alias bbmx -keystore $JAVA_HOME/lib/security/cacerts -file bbmx.cer -storepass changeit -noprompt
+RUN keytool -import -alias bbmx -keystore $JAVA_HOME/lib/security/cacerts -file ./bbmx.cer -storepass changeit -noprompt
 
-RUN keytool -import -alias certificate -keystore $JAVA_HOME/lib/security/cacerts -file certificate.pem -storepass changeit -noprompt
+RUN keytool -import -alias certificate -keystore $JAVA_HOME/lib/security/cacerts -file ./certificate.pem -storepass changeit -noprompt
 
 RUN echo "$COMPILE"
 
