@@ -1,8 +1,8 @@
 FROM amazoncorretto:11
 
-ADD target/DockerDemo.jar DockerDemo.jar
-EXPOSE 8091
-ENTRYPOINT ["java","-jar","DockerDemo.jar"]
+ARG JAR_FILE=build/libs/*SNAPSHOT.jar
+COPY ${JAR_FILE} /app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
 
 
 
