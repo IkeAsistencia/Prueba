@@ -22,7 +22,9 @@ phases:
       - mvn clean install
       - pwd
       - ls target/
-      - cp target/BanBajio-2.5.8.jar ../
+      - cd target/
+      - cp BanBajio-2.5.8.jar ../
+      - cd ..
       - ls
       - echo Building the Docker image...
       - docker build -t $REPOSITORY_URI:latest .
