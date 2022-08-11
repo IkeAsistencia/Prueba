@@ -21,6 +21,8 @@ phases:
       - echo building the Jar file
       - mvn clean install
       - pwd
+      - ls target/
+      - ls 
       - echo Building the Docker image...
       - docker build -t $REPOSITORY_URI:latest .
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
