@@ -20,12 +20,12 @@ phases:
       - echo Build started on `date`
       - echo building the Jar file
       - mvn clean install
-      - pwd
-      - ls target/
-      - cd target/
-      - cp BanBajio-2.5.8.jar ../
-      - cd ..
-      - ls
+      - #pwd
+      - #ls target/
+      - #cd target/
+      - #cp BanBajio-2.5.8.jar ../
+      - #cd ..
+      - #ls
       - echo Building the Docker image...
       - docker build -t $REPOSITORY_URI:latest .
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG

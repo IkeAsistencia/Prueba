@@ -7,7 +7,7 @@ EXPOSE 8091 8091
 EXPOSE 80 8091
 EXPOSE 443 8091
 
-ADD $PROJECT_NAME-$VERSION.jar $PROJECT_NAME-$VERSION.jar
+ADD target/$PROJECT_NAME-$VERSION.jar $PROJECT_NAME-$VERSION.jar
 ADD ./vmwnasistappqa.pfx /$PROJECT_NAME-$VERSION.jar/vmwnasistappqa.pfx
 ADD ./bbmx.cer /$PROJECT_NAME-$VERSION.jar/bbmx.cer
 ADD ./certificate.pem /$PROJECT_NAME-$VERSION.jar/certificate.pem
