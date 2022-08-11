@@ -9,12 +9,12 @@ ENV COMPILE="-Xminf0.1 -Xmaxf0.3 -Xms128M -Xmx512M "
 #WORKDIR /$PROJECT_NAME
 #VOLUME /$PROJECT_NAME
 
-ADD $PROJECT_NAME-$VERSION.jar $PROJECT_NAME-$VERSION.jar
+ADD BanBajio-2.5.8.jar BanBajio-2.5.8.jar
 EXPOSE $APP_PORT $APP_PORT
 EXPOSE 8091 8091
 EXPOSE 80 8091
 EXPOSE 443 8091
-ENTRYPOINT ["java","-jar","$PROJECT_NAME-$VERSION.jar"]
+ENTRYPOINT ["sh", "-c", "java -jar BanBajio-2.5.8.jar"]
 
 #ADD ./vmwnasistappqa.pfx /$PROJECT_NAME-$VERSION.jar/vmwnasistappqa.pfx
 #ADD ./bbmx.cer /$PROJECT_NAME-$VERSION.jar/bbmx.cer
