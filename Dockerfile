@@ -1,6 +1,5 @@
 FROM amazoncorretto:11
 
-FROM openjdk:8
 ADD target/DockerDemo.jar DockerDemo.jar
 EXPOSE 8091
 ENTRYPOINT ["java","-jar","DockerDemo.jar"]
